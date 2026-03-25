@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Get bids",
+      "method": "GET",
+      "path": "/?order_id=1",
+      "expectedStatus": 200,
+      "expectedBody": {"bids": []},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

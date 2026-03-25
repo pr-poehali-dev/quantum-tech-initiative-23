@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "name": "Calculate",
+      "method": "POST",
+      "path": "/",
+      "body": {"area": 20, "ceiling_type": "Матовый"},
+      "expectedStatus": 200,
+      "expectedBody": {"total": 10500},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

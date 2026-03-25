@@ -12,19 +12,28 @@ export function ContactSection() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (!formData.name || !formData.phone || !formData.area) {
-      return
-    }
+    if (!formData.name || !formData.phone || !formData.area) return
 
     setIsSubmitting(true)
-
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-    setFormData({ name: "", phone: "", area: "", message: "" })
-
-    setTimeout(() => setSubmitSuccess(false), 5000)
+    try {
+      await fetch("https://functions.poehali.dev/d6d53170-6e92-4a93-876f-8472c6d7e95d", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          area: Number(formData.area),
+          comment: formData.message,
+        }),
+      })
+      setSubmitSuccess(true)
+      setFormData({ name: "", phone: "", area: "", message: "" })
+      setTimeout(() => setSubmitSuccess(false), 6000)
+    } catch {
+      // silent
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
