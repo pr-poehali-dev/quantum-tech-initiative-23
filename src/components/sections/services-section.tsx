@@ -15,31 +15,31 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Услуги
+            Преимущества
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Наши компетенции</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Почему выбирают нас</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
-              title: "Веб-разработка",
-              description: "Создание современных веб-приложений любой сложности",
+              title: "Аукцион цен",
+              description: "Бригады конкурируют за ваш заказ — вы всегда получаете лучшую рыночную цену",
               direction: "top",
             },
             {
-              title: "UI/UX Дизайн",
-              description: "Проектирование удобных и красивых интерфейсов",
+              title: "Онлайн-калькулятор",
+              description: "Точный расчёт стоимости потолка прямо на сайте — без звонков и ожиданий",
               direction: "right",
             },
             {
-              title: "Мобильные приложения",
-              description: "Кроссплатформенная разработка для iOS и Android",
+              title: "Проверенные бригады",
+              description: "Только сертифицированные монтажники с рейтингом и отзывами реальных клиентов",
               direction: "left",
             },
             {
-              title: "Консалтинг",
-              description: "Техническая экспертиза и стратегическое планирование",
+              title: "Быстрый монтаж",
+              description: "Бригады из вашего города — минимальные сроки ожидания и выезда",
               direction: "bottom",
             },
           ].map((service, i) => (
